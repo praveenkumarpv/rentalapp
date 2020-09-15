@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "576556880333",
+    "firebase_url": "https://rentelapp-5b44f.firebaseio.com",
+    "project_id": "rentelapp-5b44f",
+    "storage_bucket": "rentelapp-5b44f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:576556880333:android:f9ff14ba556a4968cf3484",
+        "android_client_info": {
+          "package_name": "com.example.rentalapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "576556880333-07squujjilgk2glv6shgc7e3sf7htsqv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rentalapp",
+            "certificate_hash": "baa45495ff8e03e1e62173943ba5b977e4784697"
+          }
+        },
+        {
+          "client_id": "576556880333-3tqktqd4ge6uoou976nm5ds8dmthu432.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDK1W_W-Rfy0omilPUxLDg5ZvY8kcTcwx0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "576556880333-3tqktqd4ge6uoou976nm5ds8dmthu432.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -2,6 +2,7 @@ package com.example.rentalapp;
 
 import android.app.VoiceInteractor;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -41,6 +42,7 @@ public class carsactivity extends Fragment {
     private RecyclerView carrecyclerview;
     private  FirestoreRecyclerAdapter adapter;
     private Context mcontext;
+
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -84,6 +86,7 @@ public class carsactivity extends Fragment {
     }
 
     @Override
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -104,9 +107,12 @@ public class carsactivity extends Fragment {
                 itemsViewHolder.carname.setText(modalclass.getCarname());
                 itemsViewHolder.price.setText(modalclass.getRen());
                 Glide.with(getActivity()).asBitmap().load(modalclass.getImurl()).into(itemsViewHolder.im);
+
                 itemsViewHolder.car.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        Intent intent=new Intent(v.getContext(),Detailed.class);
+
                         String name = modalclass.getCarname();
                         String rent = modalclass.getRen();
                         String imurl = modalclass.getImurl();
@@ -114,9 +120,12 @@ public class carsactivity extends Fragment {
                         bub.putString("name",name);
                         bub.putString("rent",rent);
                         bub.putString("imurl",imurl);
-                        detailedview car = new detailedview();
-                        car.setArguments(bub);
-                        Navigation.findNavController(v).navigate(R.id.action_carsactivity_to_detailedview);
+                        intent.putExtra("bundle",bub);
+                        v.getContext().startActivity(intent);
+
+                        //detailedview car = new detailedview();
+                        //car.setArguments(bub);
+                       //Navigation.findNavController(v).navigate(R.id.action_carsactivity_to_detailedview);
 
                     }
                 });

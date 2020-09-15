@@ -62,10 +62,10 @@ public class detailedview extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_detailedview, container, false);
-        Bundle get = this.getArguments();
-        String carname = get.getString("name");
-        String imgurl =get.getString("imurl");
-        String rents = get.getString("rent");
+        Bundle arguments = getArguments();
+        String carname = arguments.getString("name");
+        String imgurl =arguments.getString("imurl");
+        String rents = arguments.getString("rent");
         carimage = view.findViewById(R.id.imageView);
         carnames = view.findViewById(R.id.textView6);
         carnames.setText(carname);

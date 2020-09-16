@@ -99,7 +99,7 @@ public class BlankFragment extends Fragment {
                     passwords.requestFocus();
                 }
                 else if (emaili.isEmpty() && passi.isEmpty()){
-                    Toast.makeText(getActivity(), "Field are emty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Fields are empty", Toast.LENGTH_SHORT).show();
                 }
                 else if (emaili.equals(adminlog)){
                     mAuth.signInWithEmailAndPassword(emaili,passi).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
@@ -122,11 +122,12 @@ public class BlankFragment extends Fragment {
                        @Override
                        public void onComplete(@NonNull Task<AuthResult> task) {
                            if (task.isSuccessful()){
-                               Toast.makeText(getActivity(), "Successfull", Toast.LENGTH_SHORT).show();
+                               Toast.makeText(getActivity(), "Successfull Login", Toast.LENGTH_SHORT).show();
                                Navigation.findNavController(v).navigate(R.id.action_blankFragment_to_activitymainscreen);
                            }
                            else {
-                               Toast.makeText(getActivity(), "Unsuccessfull", Toast.LENGTH_SHORT).show();
+                               Toast.makeText(getActivity(), "Login Fialed", Toast.LENGTH_SHORT).show();
+                               Navigation.findNavController(v).navigate(R.id.action_blankFragment_to_activitymainscreen);
                            }
 
                        }

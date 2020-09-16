@@ -8,7 +8,7 @@ public class bikemodalclass {
 
 
    private  bikemodalclass(){}
-    private  bikemodalclass(String bikename,String bimurl,String rent,String bikemodal){
+    bikemodalclass(String bikename, String bimurl, String rent, String bikemodal){
         this.bikename=bikename;
         this.bimurl = bimurl;
         this.rent = rent;

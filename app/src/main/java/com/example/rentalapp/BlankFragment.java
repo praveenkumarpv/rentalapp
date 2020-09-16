@@ -127,7 +127,7 @@ public class BlankFragment extends Fragment {
                            }
                            else {
                                Toast.makeText(getActivity(), "Login Fialed", Toast.LENGTH_SHORT).show();
-                               Navigation.findNavController(v).navigate(R.id.action_blankFragment_to_activitymainscreen);
+
                            }
 
                        }

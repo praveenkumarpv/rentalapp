@@ -116,10 +116,12 @@ public class carsactivity extends Fragment {
                         String name = modalclass.getCarname();
                         String rent = modalclass.getRen();
                         String imurl = modalclass.getImurl();
+                        String carmodal =modalclass.getCarmodal();
                         Bundle bub = new Bundle();
                         bub.putString("name",name);
                         bub.putString("rent",rent);
                         bub.putString("imurl",imurl);
+                        bub.putString("modal",carmodal);
                         intent.putExtra("bundle",bub);
                         v.getContext().startActivity(intent);
 

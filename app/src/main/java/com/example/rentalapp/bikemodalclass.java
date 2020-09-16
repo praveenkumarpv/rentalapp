@@ -4,11 +4,15 @@ public class bikemodalclass {
    private String bikename;
    private String bimurl;
    private String rent;
+   private  String bikemodal;
+
+
    private  bikemodalclass(){}
-    private  bikemodalclass(String bikename,String bimurl,String rent){
+    private  bikemodalclass(String bikename,String bimurl,String rent,String bikemodal){
         this.bikename=bikename;
         this.bimurl = bimurl;
         this.rent = rent;
+        this.bikemodal =bikemodal;
     }
 
     public String getRent() {
@@ -35,6 +39,14 @@ public class bikemodalclass {
 
     public void setBimurl(String bimurl) {
         this.bimurl = bimurl;
+    }
+
+    public String getBikemodal() {
+        return bikemodal;
+    }
+
+    public void setBikemodal(String bikemodal) {
+        this.bikemodal = bikemodal;
     }
 
 }

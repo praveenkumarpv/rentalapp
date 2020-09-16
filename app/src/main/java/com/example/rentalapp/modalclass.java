@@ -4,11 +4,23 @@ public class modalclass {
     private  String carname;
     private  String imurl;
     private String ren;
+    private String carmodal;
+
+    public String getCarmodal() {
+        return carmodal;
+    }
+
+    public void setCarmodal(String carmodal) {
+        this.carmodal = carmodal;
+    }
+
+
     private  modalclass(){}
-    private  modalclass(String carname,String imurl,String ren){
+    private  modalclass(String carname,String imurl,String ren,String carmodal){
         this.carname=carname;
         this.imurl = imurl;
         this.ren = ren;
+        this.carmodal = carmodal;
     }
 
     public String getImurl() {

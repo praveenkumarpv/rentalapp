@@ -1,8 +1,10 @@
 package com.example.rentalapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -91,10 +93,27 @@ public class bike extends Fragment {
             }
 
             @Override
-            protected void onBindViewHolder(@NonNull bitemviewholder bitemviewholder, int i, @NonNull bikemodalclass bikemodalclass) {
+            protected void onBindViewHolder(@NonNull bitemviewholder bitemviewholder, int i, @NonNull final bikemodalclass bikemodalclass) {
                 bitemviewholder.bikenames.setText(bikemodalclass.getBikename());
                 bitemviewholder.rent.setText(bikemodalclass.getRent());
                 Glide.with(getActivity()).asBitmap().load(bikemodalclass.getBimurl()).into(bitemviewholder.bikeimage);
+                bitemviewholder.bikeselecter.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(v.getContext(),Detailed.class);
+                        String name = bikemodalclass.getBikename();
+                        String rent = bikemodalclass.getRent();
+                        String imurl = bikemodalclass.getBimurl();
+                        String modal = bikemodalclass.getBikemodal();
+                        Bundle bub = new Bundle();
+                        bub.putString("name",name);
+                        bub.putString("rent",rent);
+                        bub.putString("imurl",imurl);
+                        bub.putString("modal",modal);
+                        intent.putExtra("bundle",bub);
+                        v.getContext().startActivity(intent);
+                    }
+                });
 
             }
         };
@@ -110,11 +129,13 @@ public class bike extends Fragment {
         private CircleImageView bikeimage;
         private  TextView bikenames;
         private  TextView rent;
+        private CardView bikeselecter;
         public bitemviewholder(@NonNull View itemView) {
             super(itemView);
             bikeimage = itemView.findViewById(R.id.bikeimage);
             bikenames = itemView.findViewById(R.id.bikename);
             rent = itemView.findViewById(R.id.biprize);
+            bikeselecter = itemView.findViewById(R.id.bikecard);
         }
     }
 

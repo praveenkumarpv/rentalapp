@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/carcard"
+    android:id="@+id/bikecard"
     android:background="#000">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

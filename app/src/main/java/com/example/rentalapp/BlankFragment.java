@@ -31,6 +31,7 @@ public class BlankFragment extends Fragment {
     Button log;
     TextView forget,regiser;
     private FirebaseAuth mAuth;
+    private String adminlog = "adminlog@gmail.com";
 
 
 
@@ -99,6 +100,22 @@ public class BlankFragment extends Fragment {
                 }
                 else if (emaili.isEmpty() && passi.isEmpty()){
                     Toast.makeText(getActivity(), "Field are emty", Toast.LENGTH_SHORT).show();
+                }
+                else if (emaili.equals(adminlog)){
+                    mAuth.signInWithEmailAndPassword(emaili,passi).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()){
+                                Toast.makeText(getActivity(), "Successfull", Toast.LENGTH_SHORT).show();
+                                Navigation.findNavController(v).navigate(R.id.action_blankFragment_to_addminselection);
+                            }
+                            else {
+                                Toast.makeText(getActivity(), "Unsuccessfull", Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                    });
+
                 }
                 else  if (!(emaili.isEmpty() && passi.isEmpty())){
                    mAuth.signInWithEmailAndPassword(emaili,passi).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {

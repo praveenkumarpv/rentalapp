@@ -2,11 +2,24 @@ package com.example.rentalapp;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter_LifecycleAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +27,10 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class bike extends Fragment {
+    private RecyclerView bikerecyclerview;
+    private FirestoreRecyclerAdapter adapters;
+    private FirebaseFirestore firebaseFirestore;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -56,9 +73,60 @@ public class bike extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bike, container, false);
+        View v=  inflater.inflate(R.layout.fragment_bike, container, false);
+        firebaseFirestore = FirebaseFirestore.getInstance();
+        bikerecyclerview = v.findViewById(R.id.bikerecycler);
+        Query query = firebaseFirestore.collection("bike");
+        FirestoreRecyclerOptions<bikemodalclass>options = new FirestoreRecyclerOptions.Builder<bikemodalclass>().setQuery(query,bikemodalclass.class).build();
+        adapters = new FirestoreRecyclerAdapter<bikemodalclass, bitemviewholder>(options) {
+            @NonNull
+            @Override
+            public bitemviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.bikerecylerviw,parent,false);
+
+                return new bitemviewholder(view);
+            }
+
+            @Override
+            protected void onBindViewHolder(@NonNull bitemviewholder bitemviewholder, int i, @NonNull bikemodalclass bikemodalclass) {
+                bitemviewholder.bikenames.setText(bikemodalclass.getBikename());
+                bitemviewholder.rent.setText(bikemodalclass.getRent());
+                Glide.with(getActivity()).asBitmap().load(bikemodalclass.getBimurl()).into(bitemviewholder.bikeimage);
+
+            }
+        };
+        bikerecyclerview.setHasFixedSize(true);
+        bikerecyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
+        bikerecyclerview.setAdapter(adapters);
+
+        return v;
+    }
+
+
+    private class bitemviewholder extends RecyclerView.ViewHolder {
+        private CircleImageView bikeimage;
+        private  TextView bikenames;
+        private  TextView rent;
+        public bitemviewholder(@NonNull View itemView) {
+            super(itemView);
+            bikeimage = itemView.findViewById(R.id.bikeimage);
+            bikenames = itemView.findViewById(R.id.bikename);
+            rent = itemView.findViewById(R.id.biprize);
+        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        adapters.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        adapters.startListening();
     }
 }

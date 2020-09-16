@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_blankFragment_to_activitymainscreen"
             app:destination="@id/activitymainscreen" />
+        <action
+            android:id="@+id/action_blankFragment_to_addminselection"
+            app:destination="@id/addminselection" />
     </fragment>
     <fragment
         android:id="@+id/registration"
@@ -63,6 +66,9 @@
         <action
             android:id="@+id/action_activitymainscreen_to_carsactivity"
             app:destination="@id/carsactivity" />
+        <action
+            android:id="@+id/action_activitymainscreen_to_bike2"
+            app:destination="@id/bike2" />
     </fragment>
     <fragment
         android:id="@+id/carsactivity"
@@ -78,4 +84,35 @@
         android:name="com.example.rentalapp.detailedview"
         android:label="fragment_detailedview"
         tools:layout="@layout/fragment_detailedview" />
+    <fragment
+        android:id="@+id/bike2"
+        android:name="com.example.rentalapp.bike"
+        android:label="fragment_bike"
+        tools:layout="@layout/fragment_bike" >
+        <action
+            android:id="@+id/action_bike2_to_detailedview"
+            app:destination="@id/detailedview" />
+    </fragment>
+    <fragment
+        android:id="@+id/addminselection"
+        android:name="com.example.rentalapp.addminselection"
+        android:label="fragment_addminselection"
+        tools:layout="@layout/fragment_addminselection" >
+        <action
+            android:id="@+id/action_addminselection_to_bikeupload"
+            app:destination="@id/bikeupload" />
+        <action
+            android:id="@+id/action_addminselection_to_blankFragment2"
+            app:destination="@id/blankFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/bikeupload"
+        android:name="com.example.rentalapp.bikeupload"
+        android:label="fragment_bikeupload"
+        tools:layout="@layout/fragment_bikeupload" />
+    <fragment
+        android:id="@+id/blankFragment2"
+        android:name="com.example.rentalapp.BlankFragment2"
+        android:label="fragment_blank2"
+        tools:layout="@layout/fragment_blank2" />
 </navigation>

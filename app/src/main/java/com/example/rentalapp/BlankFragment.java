@@ -118,7 +118,8 @@ public class BlankFragment extends Fragment {
                                 Navigation.findNavController(v).navigate(R.id.action_blankFragment_to_addminselection);
                             }
                             else {
-                                Toast.makeText(getActivity(), "Unsuccessfull", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), "Failed", Toast.LENGTH_SHORT).show();
+
                             }
 
                         }

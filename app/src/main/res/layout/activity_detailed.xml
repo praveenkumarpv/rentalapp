@@ -17,112 +17,124 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/kars" />
-
     <LinearLayout
-        android:id="@+id/linearLayout5"
-        android:layout_width="301dp"
-        android:layout_height="49dp"
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:layout_marginTop="54dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginEnd="20dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cImage">
 
-        <TextView
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="115dp"
+            android:background="@drawable/tiles"
             android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:text="Modal:"
-            android:gravity="right"
-            android:textColor="#000000"
-            android:textSize="30dp" />
+            android:layout_marginEnd="5dp"
 
-        <TextView
-            android:id="@+id/cName"
-            android:layout_width="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="right"
+                android:text="Model"
+                android:textAlignment="center"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="30dp"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                android:id="@+id/cName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="CarName"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout8"
+            android:layout_width="115dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:gravity="center"
-            android:text="CarName"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textSize="20sp" />
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/tiles"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="right"
+                android:text="Rent"
+                android:textAlignment="center"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="30dp"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                android:id="@+id/cRent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="$"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout7"
+            android:layout_width="115dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/tiles"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="right"
+                android:text="Year"
+                android:textAlignment="center"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="30dp"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                android:id="@+id/modal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="CarRent"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout8"
-        android:layout_width="310dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="Button" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:gravity="right"
-            android:text="Rent/day:"
-            android:textColor="#000000"
-            android:textSize="30dp" />
-
-        <TextView
-            android:id="@+id/cRent"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:gravity="center"
-            android:text="$"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textSize="20sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout7"
-        android:layout_width="301dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="33dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:text="Year:"
-            android:textColor="#000000"
-            android:gravity="right"
-            android:textSize="30dp"/>
-
-        <TextView
-            android:id="@+id/modal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:text="CarRent"
-            android:gravity="center"
-            android:textColor="#000"
-            android:textAlignment="center"
-            android:textSize="20sp" />
-
-    </LinearLayout>
 
     <Button
         android:id="@+id/book"
@@ -141,83 +153,131 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linear2"
         android:layout_width="match_parent"
-        android:layout_height="49dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="1dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="20dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
+        app:layout_constraintTop_toBottomOf="@+id/linear">
+
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="115dp"
+
             android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:orientation="horizontal">
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/tiles"
+
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="0.5"
-                android:text="Km:"
+                android:text="KM"
+                android:textAlignment="center"
+                android:textColor="@color/cardview_dark_background"
                 android:textSize="25dp"
-                android:textColor="#000"
-                android:layout_gravity="center_vertical"/>
+                tools:ignore="RtlCompat" />
+
             <TextView
                 android:id="@+id/kmdriven"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
+                android:textAlignment="center"
                 android:textColor="#000"
-                android:textSize="25dp"/>
+                android:textSize="25dp"
+                android:textStyle="bold"/>
 
         </LinearLayout>
+
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="115dp"
+
             android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:orientation="horizontal">
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/tiles"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:text="Mil:"
-                android:textSize="25dp"
                 android:layout_gravity="center_vertical"
-                android:textColor="#000"
-                />
+                android:layout_weight="0.5"
+                android:text="Km/L"
+                android:textAlignment="center"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="25dp"
+                tools:ignore="RtlCompat" />
+
             <TextView
                 android:id="@+id/milage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
+                android:textAlignment="center"
                 android:textColor="#000"
-                android:textSize="30dp"/>
-
-
+                android:textSize="30dp"
+                android:textStyle="bold"/>
         </LinearLayout>
+
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="115dp"
+
             android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:orientation="horizontal">
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/tiles"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="0.5"
-                android:text="Fuel:"
+                android:text="Fuel"
+                android:textAlignment="center"
+                android:textColor="@color/cardview_dark_background"
                 android:textSize="25dp"
-                android:textColor="#000"
-                android:layout_gravity="center_vertical"/>
+                tools:ignore="RtlCompat" />
+
             <TextView
                 android:id="@+id/fuel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
+                android:textAlignment="center"
                 android:textColor="#000"
-                android:textSize="25dp"/>
+                android:textSize="25dp"
+                android:textStyle="bold"/>
 
 
         </LinearLayout>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="209dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="172dp"
+        android:layout_marginBottom="16dp"
+        android:text="Specifications"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/linear2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,10 +49,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="sans-serif"
-                    android:text="car"
-                    android:textColor="@color/blue"
                     android:paddingStart="20dp"
-                    android:textSize="40dp" />
+                    android:text="carName"
+                    android:textColor="@color/blue"
+                    android:textSize="24sp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -62,20 +62,29 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="137dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
                     android:fontFamily="sans-serif"
+                    android:paddingStart="20dp"
                     android:text="Rent:"
-                    android:gravity="right"
-                    android:textSize="25dp" />
+                    android:textAlignment="textEnd"
+                    android:textSize="18sp" />
+
                 <TextView
                     android:id="@+id/biprize"
-                    android:layout_width="match_parent"
+                    android:layout_width="98dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
                     android:text="car"
-                    android:textSize="25dp" />
+                    android:textSize="18sp" />
+
+                <TextView
+
+                    android:layout_width="114dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:textSize="18sp" />
             </LinearLayout>
 
         </LinearLayout>

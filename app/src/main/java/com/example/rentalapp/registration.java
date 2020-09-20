@@ -146,14 +146,14 @@ public class registration extends Fragment {
                              documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                  @Override
                                  public void onSuccess(Void aVoid) {
-                                     Navigation.findNavController(v).navigate(R.id.action_registration_to_activitymainscreen);
+                                     Navigation.findNavController(v).navigate(R.id.action_registration_to_blankFragment);
                                  }
                              });
 
 
                           }
                           else {
-                              Toast.makeText(getActivity(), "Unsuccessfull", Toast.LENGTH_SHORT).show();
+                              Toast.makeText(getActivity(), "Failed", Toast.LENGTH_SHORT).show();
                           }
                        }
                    });

@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_mainscreen_to_registration"
             app:destination="@id/registration" />
+        <action
+            android:id="@+id/action_mainscreen_to_activitymainscreen"
+            app:destination="@id/activitymainscreen" />
     </fragment>
     <fragment
         android:id="@+id/blankFragment"
@@ -43,6 +46,9 @@
         <action
             android:id="@+id/action_registration_to_blankFragment"
             app:destination="@id/blankFragment" />
+        <action
+            android:id="@+id/action_registration_to_activitymainscreen"
+            app:destination="@id/activitymainscreen" />
     </fragment>
     <activity
         android:id="@+id/mainActivity"
@@ -74,25 +80,12 @@
         android:id="@+id/carsactivity"
         android:name="com.example.rentalapp.carsactivity"
         android:label="fragment_carsactivity"
-        tools:layout="@layout/fragment_carsactivity" >
-        <action
-            android:id="@+id/action_carsactivity_to_detailedview"
-            app:destination="@id/detailedview" />
-    </fragment>
-    <fragment
-        android:id="@+id/detailedview"
-        android:name="com.example.rentalapp.detailedview"
-        android:label="fragment_detailedview"
-        tools:layout="@layout/fragment_detailedview" />
+        tools:layout="@layout/fragment_carsactivity" />
     <fragment
         android:id="@+id/bike2"
         android:name="com.example.rentalapp.bike"
         android:label="fragment_bike"
-        tools:layout="@layout/fragment_bike" >
-        <action
-            android:id="@+id/action_bike2_to_detailedview"
-            app:destination="@id/detailedview" />
-    </fragment>
+        tools:layout="@layout/fragment_bike" />
     <fragment
         android:id="@+id/addminselection"
         android:name="com.example.rentalapp.addminselection"
@@ -104,6 +97,12 @@
         <action
             android:id="@+id/action_addminselection_to_blankFragment2"
             app:destination="@id/blankFragment2" />
+        <action
+            android:id="@+id/action_addminselection_to_carupanddelreview"
+            app:destination="@id/carupanddelreview" />
+        <action
+            android:id="@+id/action_addminselection_to_bikeupanddelrecycler"
+            app:destination="@id/bikeupanddelrecycler" />
     </fragment>
     <fragment
         android:id="@+id/bikeupload"
@@ -115,4 +114,14 @@
         android:name="com.example.rentalapp.BlankFragment2"
         android:label="fragment_blank2"
         tools:layout="@layout/fragment_blank2" />
+    <fragment
+        android:id="@+id/carupanddelreview"
+        android:name="com.example.rentalapp.carupanddelreview"
+        android:label="fragment_carupanddelreview"
+        tools:layout="@layout/fragment_carupanddelreview" />
+    <fragment
+        android:id="@+id/bikeupanddelrecycler"
+        android:name="com.example.rentalapp.bikeupanddelrecycler"
+        android:label="fragment_bikeupanddelrecycler"
+        tools:layout="@layout/fragment_bikeupanddelrecycler" />
 </navigation>

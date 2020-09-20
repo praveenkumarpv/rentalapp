@@ -46,4 +46,7 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:29.0.0'
     implementation 'com.firebaseui:firebase-ui-database:6.0.2'
     implementation 'com.firebaseui:firebase-ui-firestore:4.3.1'
+    implementation 'android.arch.navigation:navigation-fragment-ktx:1.0.0-rc02'
+    implementation 'android.arch.navigation:navigation-ui-ktx:1.0.0-rc02'
+    implementation 'androidx.core:core: 1.0.1'
 }

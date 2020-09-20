@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".updateanddelet">
+
+    <ImageView
+        android:id="@+id/bikeimageup"
+        android:layout_width="0dp"
+        android:layout_height="177dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="33dp"
+        android:background="@drawable/imageviewbackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="365dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="33dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bikeimageup">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:text="Car name:"
+            android:gravity="right"
+            android:textColor="@color/blue"
+            android:textSize="35dp"/>
+        <TextView
+            android:id="@+id/carnaeup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:textAlignment="center"
+            android:textStyle="italic"
+            android:textSize="25dp"
+            android:textColor="#000000"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout67"
+        android:layout_width="365dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="33dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:gravity="right"
+            android:text="Rent/day:"
+            android:textColor="@color/blue"
+            android:textSize="35dp" />
+
+        <EditText
+            android:id="@+id/carrentup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:hint="Enter"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:textColor="#000000"
+            android:textSize="25dp"
+            android:textStyle="italic" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="365dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="33dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout67">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:gravity="right"
+            android:text="Modal:"
+            android:textColor="@color/blue"
+            android:textSize="35dp" />
+
+        <EditText
+            android:id="@+id/carmodal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:hint="Enter"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:textColor="#000000"
+            android:textSize="25dp"
+            android:textStyle="italic" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/uploadcar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/updatecars"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="36dp"
+                android:background="@drawable/button"
+                android:text="Update"
+                android:textColor="#fff" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/deletcars"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="36dp"
+                android:background="@drawable/button"
+                android:text="Delete"
+                android:textColor="#fff" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lacas"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="0.5">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Km:"
+                android:textSize="25dp"
+                android:textColor="#000"
+                android:layout_gravity="center_vertical"/>
+            <EditText
+                android:id="@+id/kmdriven"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:hint="km"
+                android:textColor="#000"
+                android:textSize="30dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="0.5">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Km/L"
+                android:textSize="22dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="#000"
+                />
+            <EditText
+                android:id="@+id/milage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:textColor="#000"
+                android:hint="km/L"
+                android:textSize="22dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="0.5">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Fuel"
+                android:textSize="25dp"
+                android:textColor="#000"
+                android:layout_gravity="center_vertical"/>
+            <EditText
+                android:id="@+id/fuel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:textColor="#000"
+                android:textSize="25dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

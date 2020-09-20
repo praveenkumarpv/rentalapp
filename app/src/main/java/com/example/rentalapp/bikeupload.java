@@ -2,7 +2,6 @@ package com.example.rentalapp;
 
 import android.content.ContentResolver;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -11,7 +10,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,20 +23,10 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Objects;
-import java.util.UUID;
 
 import static android.app.Activity.RESULT_OK;
 import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
@@ -51,7 +39,7 @@ import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
 public class bikeupload extends Fragment {
     private static final int PICK_IMAGE_REQUEST = 1;
     ImageView bikeimageview;
-    EditText bikename, bikerent,bikemodel;
+    EditText bikename, bikerent,bikemodel,kms,mil,ful;
     Button uplodbutton;
     private Uri filepath;
     private FirebaseStorage storage;
@@ -113,6 +101,9 @@ public class bikeupload extends Fragment {
         bikemodel = view.findViewById(R.id.bikemodel);
         bikerent = view.findViewById(R.id.bikerentup);
         uplodbutton = view.findViewById(R.id.uploadbike);
+        kms = view.findViewById(R.id.kmdriven);
+        mil = view.findViewById(R.id.milage);
+        ful = view.findViewById(R.id.fuel);
         bikeimageview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,18 +119,7 @@ public class bikeupload extends Fragment {
         return view;
     }
 
-   /* private void uploadtofirebase() {
-        if (filepath != null) {
-            StorageReference reference = storageReference.child("image/" + UUID.randomUUID().toString());
-            reference.putFile(filepath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Toast.makeText(getActivity(), "Sussesfull", Toast.LENGTH_SHORT).show();
 
-                }
-            });
-        }
-    }*/
 
 
     private void uloadimage() {
@@ -154,7 +134,8 @@ public class bikeupload extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode ==
+                RESULT_OK
                 && data != null && data.getData() != null) {
             filepath = data.getData();
             Glide.with(this)
@@ -181,7 +162,7 @@ public class bikeupload extends Fragment {
                                     bikemodalclass upload = new bikemodalclass(bikename.getText().toString().trim(),
                                             downloadUrl.toString(),
                                             bikerent.getText().toString(),
-                                            bikemodel.getText().toString().trim());
+                                            bikemodel.getText().toString().trim(),kms.getText().toString(),mil.getText().toString(),ful.getText().toString());
 
                                     db.collection("bike").document(bikename.getText().toString().trim())
                                             .set(upload)
@@ -220,14 +201,7 @@ public class bikeupload extends Fragment {
     }
 
     private void Uploadfile() {
-
-
-
-
-
-
-
-
-        }
+        Toast.makeText(getActivity(), "Processing.....", Toast.LENGTH_SHORT).show();
+    }
     }
 

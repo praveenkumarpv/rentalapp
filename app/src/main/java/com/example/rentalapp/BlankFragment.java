@@ -1,5 +1,6 @@
 package com.example.rentalapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -32,6 +33,7 @@ public class BlankFragment extends Fragment {
     TextView forget,regiser;
     private FirebaseAuth mAuth;
     private String adminlog = "adminlog@gmail.com";
+    private String uid;
 
 
 
@@ -107,6 +109,12 @@ public class BlankFragment extends Fragment {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
                                 Toast.makeText(getActivity(), "Successfull", Toast.LENGTH_SHORT).show();
+                                uid = mAuth.getInstance().getCurrentUser().getUid();
+//                                Intent intent=new Intent(v.getContext(),MainActivity.class);
+//                                Bundle bub = new Bundle();
+//                                bub.putString("uid",uid);
+//                                intent.putExtra("bundle",bub);
+//                                v.getContext().startActivity(intent);
                                 Navigation.findNavController(v).navigate(R.id.action_blankFragment_to_addminselection);
                             }
                             else {

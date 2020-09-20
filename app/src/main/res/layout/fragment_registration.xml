@@ -164,7 +164,6 @@
         android:background="@drawable/input_field"
         android:ems="10"
         android:hint="DOB        MON / DAY / YEAR"
-        android:inputType="date"
         android:textColorHint="@color/hintblue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.435"

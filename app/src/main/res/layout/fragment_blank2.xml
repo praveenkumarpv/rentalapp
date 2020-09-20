@@ -11,9 +11,9 @@
         android:layout_width="0dp"
         android:layout_height="177dp"
         android:layout_marginStart="33dp"
-        android:layout_marginTop="137dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="33dp"
-        android:src="@drawable/ic_launcher_foreground"
+        android:background="@drawable/imageviewbackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -50,7 +50,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout6"
+        android:id="@+id/linearLayout67"
         android:layout_width="365dp"
         android:layout_height="57dp"
         android:layout_marginStart="33dp"
@@ -83,22 +83,142 @@
 
 
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="365dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="33dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout67">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:gravity="right"
+            android:text="Modal:"
+            android:textColor="@color/blue"
+            android:textSize="35dp" />
+
+        <EditText
+            android:id="@+id/carmodal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:hint="Enter"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:textColor="#000000"
+            android:textSize="25dp"
+            android:textStyle="italic" />
+
+
+    </LinearLayout>
+
 
     <Button
-        android:id="@+id/uploadbike"
+        android:id="@+id/uploadcar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="130dp"
-        android:layout_marginTop="26dp"
         android:layout_marginEnd="130dp"
         android:background="@drawable/button"
         android:fontFamily="@font/roboto_condensed_regular"
         android:text="Upload"
         android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="0.5">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Km:"
+                android:textSize="25dp"
+                android:textColor="#000"
+                android:layout_gravity="center_vertical"/>
+            <EditText
+                android:id="@+id/kmdriven"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:hint="km"
+                android:textColor="#000"
+                android:textSize="25dp"/>
 
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="0.5">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Km/L"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="#000"
+                />
+            <EditText
+                android:id="@+id/milage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:textColor="#000"
+                android:hint="km/L"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="0.5">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Fuel"
+                android:textSize="25dp"
+                android:textColor="#000"
+                android:layout_gravity="center_vertical"/>
+            <EditText
+                android:id="@+id/fuel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:textColor="#000"
+                android:textSize="25dp"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

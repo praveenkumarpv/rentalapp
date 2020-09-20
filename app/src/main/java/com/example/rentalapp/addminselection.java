@@ -8,6 +8,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 /**
@@ -17,6 +18,7 @@ import android.widget.ImageView;
  */
 public class addminselection extends Fragment {
     ImageView carsel,bikesel;
+    Button bikupanddel,carupanddel;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,6 +67,20 @@ public class addminselection extends Fragment {
         final View view= inflater.inflate(R.layout.fragment_addminselection, container, false);
         carsel = view.findViewById(R.id.cars);
         bikesel = view.findViewById(R.id.bike);
+        carupanddel = view.findViewById(R.id.carupdel);
+        bikupanddel = view.findViewById(R.id.bikeupdel);
+        carupanddel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_addminselection_to_carupanddelreview);
+            }
+        });
+        bikupanddel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_addminselection_to_bikeupanddelrecycler);
+            }
+        });
         carsel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

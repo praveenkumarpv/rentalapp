@@ -1,10 +1,13 @@
 package com.example.rentalapp;
 
 public class modalclass {
-    private  String carname;
-    private  String imurl;
+    private String carname;
+    private String imurl;
     private String ren;
     private String carmodal;
+    private String carkm;
+    private String carmilage;
+    private String carfuel;
 
     public String getCarmodal() {
         return carmodal;
@@ -16,11 +19,14 @@ public class modalclass {
 
 
     private  modalclass(){}
-    private  modalclass(String carname,String imurl,String ren,String carmodal){
+    modalclass(String carname, String imurl, String ren, String carmodal,String carkm,String carmilage,String carfuel){
         this.carname=carname;
         this.imurl = imurl;
         this.ren = ren;
         this.carmodal = carmodal;
+        this.carkm = carkm;
+        this.carmilage = carmilage;
+        this.carfuel = carfuel;
     }
 
     public String getImurl() {
@@ -47,5 +53,28 @@ public class modalclass {
 
     public void setRen(String ren) {
         this.ren = ren;
+    }
+    public String getCarkm() {
+        return carkm;
+    }
+
+    public void setCarkm(String carkm) {
+        this.carkm = carkm;
+    }
+
+    public String getCarmilage() {
+        return carmilage;
+    }
+
+    public void setCarmilage(String carmilage) {
+        this.carmilage = carmilage;
+    }
+
+    public String getCarfuel() {
+        return carfuel;
+    }
+
+    public void setCarfuel(String carfuel) {
+        this.carfuel = carfuel;
     }
 }

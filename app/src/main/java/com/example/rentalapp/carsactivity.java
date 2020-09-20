@@ -1,6 +1,5 @@
 package com.example.rentalapp;
 
-import android.app.VoiceInteractor;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,29 +7,21 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavAction;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
-import com.firebase.ui.firestore.FirestoreRecyclerAdapter_LifecycleAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-
-import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import okio.Options;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -117,11 +108,17 @@ public class carsactivity extends Fragment {
                         String rent = modalclass.getRen();
                         String imurl = modalclass.getImurl();
                         String carmodal =modalclass.getCarmodal();
+                        String carkmrun = modalclass.getCarkm();
+                        String carmilage = modalclass.getCarmilage();
+                        String carfuel = modalclass.getCarfuel();
                         Bundle bub = new Bundle();
                         bub.putString("name",name);
                         bub.putString("rent",rent);
                         bub.putString("imurl",imurl);
                         bub.putString("modal",carmodal);
+                        bub.putString("km",carkmrun);
+                        bub.putString("milage",carmilage);
+                        bub.putString("fuel",carfuel);
                         intent.putExtra("bundle",bub);
                         v.getContext().startActivity(intent);
 

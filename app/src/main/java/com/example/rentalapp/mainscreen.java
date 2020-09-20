@@ -13,6 +13,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link mainscreen#newInstance} factory method to
@@ -69,6 +72,11 @@ public class mainscreen extends Fragment {
         v = inflater.inflate(R.layout.fragment_mainscreen,container,false);
         login = v.findViewById(R.id.log);
         registerlo = v.findViewById(R.id.reg);
+//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//        String uid = user.getUid();
+//        if (uid != null){
+//            Navigation.findNavController(v).navigate(R.id.action_mainscreen_to_activitymainscreen);
+//        }
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

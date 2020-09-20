@@ -135,7 +135,7 @@ public class registration extends Fragment {
                           if (task.isSuccessful()){
                               uid = mAuth.getInstance().getCurrentUser().getUid();
                               DocumentReference documentReference = db.collection("userres").document(uid);
-                              Toast.makeText(getActivity(), uid, Toast.LENGTH_SHORT).show();
+                              Toast.makeText(getActivity(), "Wellcome", Toast.LENGTH_SHORT).show();
                               Map<String, Object> user = new HashMap<>();
 
                               user.put("name",name);
@@ -146,7 +146,7 @@ public class registration extends Fragment {
                              documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                  @Override
                                  public void onSuccess(Void aVoid) {
-                                     Navigation.findNavController(v).navigate(R.id.action_registration_to_otp2);
+                                     Navigation.findNavController(v).navigate(R.id.action_registration_to_activitymainscreen);
                                  }
                              });
 

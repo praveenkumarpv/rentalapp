@@ -105,11 +105,17 @@ public class bike extends Fragment {
                         String rent = bikemodalclass.getRent();
                         String imurl = bikemodalclass.getBimurl();
                         String modal = bikemodalclass.getBikemodal();
+                        String bkmdriven = bikemodalclass.getBikekmdriven();
+                        String bmilage = bikemodalclass.getBmilage();
+                        String bfuel = bikemodalclass.getBfuel();
                         Bundle bub = new Bundle();
                         bub.putString("name",name);
                         bub.putString("rent",rent);
                         bub.putString("imurl",imurl);
                         bub.putString("modal",modal);
+                        bub.putString("km",bkmdriven);
+                        bub.putString("milage",bmilage);
+                        bub.putString("fuel",bfuel);
                         intent.putExtra("bundle",bub);
                         v.getContext().startActivity(intent);
                     }

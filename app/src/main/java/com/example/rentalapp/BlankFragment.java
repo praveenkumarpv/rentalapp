@@ -33,6 +33,7 @@ public class BlankFragment extends Fragment {
     TextView forget,regiser;
     private FirebaseAuth mAuth;
     private String adminlog = "adminlog@gmail.com";
+    private String admipass ="admin@123";
     private String uid;
 
 
@@ -103,28 +104,9 @@ public class BlankFragment extends Fragment {
                 else if (emaili.isEmpty() && passi.isEmpty()){
                     Toast.makeText(getActivity(), "Fields are empty", Toast.LENGTH_SHORT).show();
                 }
-                else if (emaili.equals(adminlog)){
-                    mAuth.signInWithEmailAndPassword(emaili,passi).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()){
-                                Toast.makeText(getActivity(), "Successfull", Toast.LENGTH_SHORT).show();
-                                uid = mAuth.getInstance().getCurrentUser().getUid();
-//                                Intent intent=new Intent(v.getContext(),MainActivity.class);
-//                                Bundle bub = new Bundle();
-//                                bub.putString("uid",uid);
-//                                intent.putExtra("bundle",bub);
-//                                v.getContext().startActivity(intent);
-                                Navigation.findNavController(v).navigate(R.id.action_blankFragment_to_addminselection);
-                            }
-                            else {
-                                Toast.makeText(getActivity(), "Failed", Toast.LENGTH_SHORT).show();
+                else if (emaili.equals(adminlog) && passi.equals(admipass)){
 
-                            }
-
-                        }
-                    });
-
+                    Navigation.findNavController(v).navigate(R.id.action_blankFragment_to_addminselection);
                 }
                 else  if (!(emaili.isEmpty() && passi.isEmpty())){
                    mAuth.signInWithEmailAndPassword(emaili,passi).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {

@@ -75,8 +75,10 @@ public class Activitymainscreen extends Fragment {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.action_activitymainscreen_to_bike2);
+                
             }
         });
         return v;
+
     }
 }

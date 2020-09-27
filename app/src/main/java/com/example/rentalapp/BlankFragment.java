@@ -1,6 +1,7 @@
 package com.example.rentalapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -35,6 +36,7 @@ public class BlankFragment extends Fragment {
     private String adminlog = "adminlog@gmail.com";
     private String admipass ="admin@123";
     private String uid;
+    public static final   String  Preference = "myprefsfile";
 
 
 
@@ -115,6 +117,10 @@ public class BlankFragment extends Fragment {
                            if (task.isSuccessful()){
                                Toast.makeText(getActivity(), "Successfull Login", Toast.LENGTH_SHORT).show();
                                Navigation.findNavController(v).navigate(R.id.action_blankFragment_to_activitymainscreen);
+                               SharedPreferences settings = getActivity().getSharedPreferences(Preference,0);
+                               SharedPreferences.Editor editor= settings.edit();
+                               editor.putBoolean("haslogin",true);
+                               editor.commit();
                            }
                            else {
                                Toast.makeText(getActivity(), "Login Fialed", Toast.LENGTH_SHORT).show();
@@ -133,6 +139,7 @@ public class BlankFragment extends Fragment {
                 Navigation.findNavController(v).navigate(R.id.action_blankFragment_to_registration);
             }
         });
+
         return v;
 
     }

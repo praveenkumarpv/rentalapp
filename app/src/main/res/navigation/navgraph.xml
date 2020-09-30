@@ -80,12 +80,20 @@
         android:id="@+id/carsactivity"
         android:name="com.example.rentalapp.carsactivity"
         android:label="fragment_carsactivity"
-        tools:layout="@layout/fragment_carsactivity" />
+        tools:layout="@layout/fragment_carsactivity" >
+        <action
+            android:id="@+id/action_carsactivity_to_activitymainscreen"
+            app:destination="@id/activitymainscreen" />
+    </fragment>
     <fragment
         android:id="@+id/bike2"
         android:name="com.example.rentalapp.bike"
         android:label="fragment_bike"
-        tools:layout="@layout/fragment_bike" />
+        tools:layout="@layout/fragment_bike" >
+        <action
+            android:id="@+id/action_bike2_to_activitymainscreen"
+            app:destination="@id/activitymainscreen" />
+    </fragment>
     <fragment
         android:id="@+id/addminselection"
         android:name="com.example.rentalapp.addminselection"

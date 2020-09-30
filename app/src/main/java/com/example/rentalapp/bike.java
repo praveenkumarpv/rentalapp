@@ -6,12 +6,14 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -32,6 +34,8 @@ public class bike extends Fragment {
     private RecyclerView bikerecyclerview;
     private FirestoreRecyclerAdapter adapters;
     private FirebaseFirestore firebaseFirestore;
+    private ImageView back;
+
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -81,6 +85,13 @@ public class bike extends Fragment {
         View v=  inflater.inflate(R.layout.fragment_bike, container, false);
         firebaseFirestore = FirebaseFirestore.getInstance();
         bikerecyclerview = v.findViewById(R.id.bikerecycler);
+        back =v.findViewById(R.id.ba);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_bike2_to_activitymainscreen);
+            }
+        });
         Query query = firebaseFirestore.collection("bike");
         FirestoreRecyclerOptions<bikemodalclass>options = new FirestoreRecyclerOptions.Builder<bikemodalclass>().setQuery(query,bikemodalclass.class).build();
         adapters = new FirestoreRecyclerAdapter<bikemodalclass, bitemviewholder>(options) {

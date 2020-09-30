@@ -7,12 +7,14 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -33,6 +35,7 @@ public class carsactivity extends Fragment {
     private RecyclerView carrecyclerview;
     private  FirestoreRecyclerAdapter adapter;
     private Context mcontext;
+    private ImageView back;
 
 
 
@@ -83,6 +86,13 @@ public class carsactivity extends Fragment {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         View v= inflater.inflate(R.layout.fragment_carsactivity, container, false);
         carrecyclerview = v.findViewById(R.id.carrecycler);
+        back =v.findViewById(R.id.ba);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_carsactivity_to_activitymainscreen);
+            }
+        });
         Query query = db.collection("cars");
         FirestoreRecyclerOptions<modalclass> op = new FirestoreRecyclerOptions.Builder<modalclass>().setQuery(query,modalclass.class).build();
        adapter = new FirestoreRecyclerAdapter<modalclass, itemsViewHolder>(op) {

@@ -31,11 +31,11 @@
 
         <LinearLayout
             android:id="@+id/linearLayout5"
-            android:layout_width="115dp"
+            android:layout_width="match_parent"
             android:background="@drawable/tiles"
             android:layout_height="match_parent"
             android:layout_marginEnd="5dp"
-
+            android:layout_weight="0.5"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -66,10 +66,11 @@
 
         <LinearLayout
             android:id="@+id/linearLayout8"
-            android:layout_width="115dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginEnd="5dp"
             android:background="@drawable/tiles"
+            android:layout_weight="0.5"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -102,10 +103,11 @@
 
         <LinearLayout
             android:id="@+id/linearLayout7"
-            android:layout_width="115dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:background="@drawable/tiles"
+            android:layout_weight="0.5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
@@ -166,12 +168,12 @@
         app:layout_constraintTop_toBottomOf="@+id/linear">
 
         <LinearLayout
-            android:layout_width="115dp"
+            android:layout_width="match_parent"
 
             android:layout_height="match_parent"
             android:layout_marginEnd="5dp"
             android:background="@drawable/tiles"
-
+            android:layout_weight="0.5"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -200,8 +202,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="115dp"
-
+            android:layout_width="match_parent"
+            android:layout_weight="0.5"
             android:layout_height="match_parent"
             android:layout_marginEnd="5dp"
             android:background="@drawable/tiles"
@@ -232,8 +234,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="115dp"
-
+            android:layout_width="match_parent"
+            android:layout_weight="0.5"
             android:layout_height="match_parent"
             android:layout_marginEnd="5dp"
             android:background="@drawable/tiles"

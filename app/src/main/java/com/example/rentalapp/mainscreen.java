@@ -4,9 +4,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.FragmentNavigator;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,7 +29,7 @@ public class mainscreen extends Fragment {
     View v;
     Button login;
     TextView registerlo;
-    public  static  final  String preference = "shared";
+
 
 
     private static final String ARG_PARAM1 = "param1";
@@ -91,9 +93,14 @@ public class mainscreen extends Fragment {
         SharedPreferences settins = getActivity().getSharedPreferences(Preference,0);
         boolean haslogin = settins.getBoolean("haslogin",false);
         if (haslogin){
-            Toast.makeText(getActivity(), "suss", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Wellcome", Toast.LENGTH_SHORT).show();
 //            Navigation.findNavController(v).navigate(R.id.action_mainscreen_to_activitymainscreen);
-            Navigation.findNavController(v).navigate(R.id.action_mainscreen_to_registration);
+//            Navigation.findNavController(v).navigate(R.id.action_mainscreen_to_registration);
+            Fragment navhost = getActivity().getSupportFragmentManager().findFragmentById(R.id.fragment);
+            NavController c = NavHostFragment.findNavController(navhost);
+            c.navigate(R.id.action_mainscreen_to_activitymainscreen);
+
+
         }
 
        return v;

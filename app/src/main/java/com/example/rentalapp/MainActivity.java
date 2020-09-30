@@ -7,6 +7,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -14,6 +15,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private String uri;
     NavController navController;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +26,18 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.fragment);
-        NavController navCo = navHostFragment.getNavController();
-
-
-
-
+        NavController navController = navHostFragment.getNavController();
     }
+
+    @Override
+    public void onBackPressed() {
+        FragmentManager manager = getSupportFragmentManager();
+        if (manager.getBackStackEntryCount() >= 1){
+            manager.popBackStack();
+        }
+        else {
+            finish();
+        }
+    }
+
 }

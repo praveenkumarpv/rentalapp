@@ -1,14 +1,22 @@
 package com.example.rentalapp;
 
+import android.app.ActivityManager;
+import android.app.Application;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import static com.example.rentalapp.BlankFragment.Preference;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,6 +25,8 @@ import android.widget.ImageView;
  */
 public class Activitymainscreen extends Fragment {
     private ImageView navcar,bike;
+    TextView logot;
+    View view;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -49,6 +59,9 @@ public class Activitymainscreen extends Fragment {
         return fragment;
     }
 
+
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +78,7 @@ public class Activitymainscreen extends Fragment {
         View v = inflater.inflate(R.layout.fragment_activitymainscreen, container, false);
         navcar = v.findViewById(R.id.cars);
         bike = v.findViewById(R.id.bike);
+        logot = v.findViewById(R.id.logout);
         navcar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,7 +92,27 @@ public class Activitymainscreen extends Fragment {
                 
             }
         });
+        logot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Successfully Logout", Toast.LENGTH_SHORT).show();
+                SharedPreferences settings = getActivity().getSharedPreferences(Preference,0);
+                SharedPreferences.Editor editor= settings.edit();
+                editor.putBoolean("haslogin",false);
+                editor.commit();
+                getActivity().finish();
+
+            }
+        });
+
+
+
         return v;
 
     }
+
+
+
+
+
 }

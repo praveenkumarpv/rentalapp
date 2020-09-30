@@ -123,7 +123,7 @@ public class BlankFragment extends Fragment {
                                editor.commit();
                            }
                            else {
-                               Toast.makeText(getActivity(), "Login Fialed", Toast.LENGTH_SHORT).show();
+                               Toast.makeText(getActivity(), "Login Failed", Toast.LENGTH_SHORT).show();
 
                            }
 

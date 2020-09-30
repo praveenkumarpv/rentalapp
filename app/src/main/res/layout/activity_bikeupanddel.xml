@@ -97,7 +97,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:gravity="right"
-            android:text="Modal:"
+            android:text="Model:"
             android:textColor="@color/blue"
             android:textSize="35dp" />
 

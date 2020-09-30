@@ -1,5 +1,6 @@
 package com.example.rentalapp;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -26,6 +27,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import static com.example.rentalapp.BlankFragment.Preference;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -147,6 +150,11 @@ public class registration extends Fragment {
                                  @Override
                                  public void onSuccess(Void aVoid) {
                                      Navigation.findNavController(v).navigate(R.id.action_registration_to_blankFragment);
+                                     Navigation.findNavController(v).navigate(R.id.action_blankFragment_to_activitymainscreen);
+                                     SharedPreferences settings = getActivity().getSharedPreferences(Preference,0);
+                                     SharedPreferences.Editor editor= settings.edit();
+                                     editor.putBoolean("haslogin",true);
+                                     editor.commit();
                                  }
                              });
 

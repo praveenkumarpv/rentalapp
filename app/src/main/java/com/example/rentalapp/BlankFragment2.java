@@ -102,7 +102,7 @@ public class BlankFragment2 extends Fragment {
         uplodecar = view.findViewById(R.id.uploadcar);
         km = view.findViewById(R.id.kmdriven);
         mi = view.findViewById(R.id.milage);
-        fu = view.findViewById(R.id.fuel);
+//        fu = view.findViewById(R.id.fuel);
         carimageloder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,7 +112,7 @@ public class BlankFragment2 extends Fragment {
         uplodecar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Processing......", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), "Processing......", Toast.LENGTH_SHORT).show();
             }
         });
         return view;
@@ -155,7 +155,7 @@ public class BlankFragment2 extends Fragment {
                             modalclass upload = new modalclass(carname.getText().toString().trim(),
                                     downloadUrl.toString(),
                                     rent.getText().toString(),
-                                    modal.getText().toString().trim(),km.getText().toString(),mi.getText().toString(),fu.getText().toString());
+                                    modal.getText().toString().trim(),km.getText().toString(),mi.getText().toString(),null);
 
                             db.collection("cars").document(carname.getText().toString().trim())
                                     .set(upload)

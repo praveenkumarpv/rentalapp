@@ -42,7 +42,7 @@ public class updateanddelet extends AppCompatActivity {
         del = findViewById(R.id.deletcars);
         kms = findViewById(R.id.kmdriven);
         mil = findViewById(R.id.milage);
-        ful = findViewById(R.id.fuel);
+//        ful = findViewById(R.id.fuel);
         Intent intent=getIntent();
         Bundle bundle=intent.getBundleExtra("bundle");
 
@@ -63,7 +63,7 @@ public class updateanddelet extends AppCompatActivity {
         modals.setText(modal);
         kms.setText(ckms);
         mil.setText(cmil);
-        ful.setText(cful);
+//        ful.setText(cful);
         del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,7 +97,7 @@ public class updateanddelet extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                modalclass upload = new modalclass(carname,downloadurl,rents.getText().toString(),modals.getText().toString(),kms.getText().toString(),mil.getText().toString()
-               ,ful.getText().toString());
+               ,null);
 
                 db.collection("cars").document(carname)
                         .set(upload, SetOptions.merge()).addOnSuccessListener(new OnSuccessListener<Void>() {

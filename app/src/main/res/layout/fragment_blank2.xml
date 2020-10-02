@@ -99,7 +99,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:gravity="right"
-            android:text="Modal:"
+            android:text="Model:"
             android:textColor="@color/blue"
             android:textSize="35dp" />
 
@@ -155,7 +155,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
-                android:text="Km:"
+                android:text="Km Limit:"
                 android:textSize="25dp"
                 android:textColor="#000"
                 android:layout_gravity="center_vertical"/>
@@ -178,8 +178,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
-                android:text="Km/L"
-                android:textSize="20dp"
+                android:text="Mileage"
+                android:textSize="25dp"
                 android:layout_gravity="center_vertical"
                 android:textColor="#000"
                 />
@@ -193,28 +193,7 @@
                 android:textSize="15dp"/>
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_weight="0.5">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:text="Fuel"
-                android:textSize="25dp"
-                android:textColor="#000"
-                android:layout_gravity="center_vertical"/>
-            <EditText
-                android:id="@+id/fuel"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:textColor="#000"
-                android:textSize="25dp"/>
 
-        </LinearLayout>
 
 
 

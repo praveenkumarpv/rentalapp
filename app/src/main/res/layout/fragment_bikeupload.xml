@@ -160,7 +160,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="0.5"
-                android:text="Km:"
+                android:text="Km Limit:"
                 android:textColor="#000"
                 android:textSize="25dp" />
             <EditText
@@ -182,7 +182,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
-                android:text="Km/L"
+                android:text="Mileage"
                 android:textSize="25dp"
                 android:layout_gravity="center_vertical"
                 android:textColor="#000"
@@ -197,27 +197,6 @@
                 android:textSize="25dp"/>
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:text="Fuel"
-                android:textSize="25dp"
-                android:textColor="#000"
-                android:layout_gravity="center_vertical"/>
-            <EditText
-                android:id="@+id/fuel"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:textColor="#000"
-                android:textSize="25dp"/>
 
-        </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,7 +25,7 @@ Button book;
         t3=findViewById(R.id.modal);
         t4 = findViewById(R.id.kmdriven);
         t5 = findViewById(R.id.milage);
-        t6 = findViewById(R.id.fuel);
+//        t6 = findViewById(R.id.fuel);
         imageView=findViewById(R.id.cImage);
         book = findViewById(R.id.book);
         Intent intent=getIntent();
@@ -48,7 +48,7 @@ Button book;
         t3.setText(modal);
         t4.setText(kmdriven);
         t5.setText(milage);
-        t6.setText(fuel);
+//        t6.setText(fuel);
         book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

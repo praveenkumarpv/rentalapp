@@ -109,6 +109,9 @@ public class BlankFragment extends Fragment {
                 else if (emaili.equals(adminlog) && passi.equals(admipass)){
 
                     Navigation.findNavController(v).navigate(R.id.action_blankFragment_to_addminselection);
+                    emilid.setText("");
+                    passwords.setText("");
+
                 }
                 else  if (!(emaili.isEmpty() && passi.isEmpty())){
                    mAuth.signInWithEmailAndPassword(emaili,passi).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
@@ -116,7 +119,7 @@ public class BlankFragment extends Fragment {
                        public void onComplete(@NonNull Task<AuthResult> task) {
                            if (task.isSuccessful()){
                                Toast.makeText(getActivity(), "Successfull Login", Toast.LENGTH_SHORT).show();
-                               Navigation.findNavController(v).navigate(R.id.action_blankFragment_to_activitymainscreen);
+                               Navigation.findNavController(v).navigate(R.id.action_blankFragment_to_mainscreen);
                                SharedPreferences settings = getActivity().getSharedPreferences(Preference,0);
                                SharedPreferences.Editor editor= settings.edit();
                                editor.putBoolean("haslogin",true);

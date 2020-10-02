@@ -103,7 +103,7 @@ public class bikeupload extends Fragment {
         uplodbutton = view.findViewById(R.id.uploadbike);
         kms = view.findViewById(R.id.kmdriven);
         mil = view.findViewById(R.id.milage);
-        ful = view.findViewById(R.id.fuel);
+//        ful = view.findViewById(R.id.fuel);
         bikeimageview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,7 +162,7 @@ public class bikeupload extends Fragment {
                                     bikemodalclass upload = new bikemodalclass(bikename.getText().toString().trim(),
                                             downloadUrl.toString(),
                                             bikerent.getText().toString(),
-                                            bikemodel.getText().toString().trim(),kms.getText().toString(),mil.getText().toString(),ful.getText().toString());
+                                            bikemodel.getText().toString().trim(),kms.getText().toString(),mil.getText().toString(),null);
 
                                     db.collection("bike").document(bikename.getText().toString().trim())
                                             .set(upload)
@@ -201,7 +201,7 @@ public class bikeupload extends Fragment {
     }
 
     private void Uploadfile() {
-        Toast.makeText(getActivity(), "Processing.....", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(), "Processing.....", Toast.LENGTH_SHORT).show();
     }
     }
 

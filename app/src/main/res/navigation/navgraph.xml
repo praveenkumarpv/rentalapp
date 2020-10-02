@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_blankFragment_to_addminselection"
             app:destination="@id/addminselection" />
+        <action
+            android:id="@+id/action_blankFragment_to_mainscreen"
+            app:destination="@id/mainscreen" />
     </fragment>
     <fragment
         android:id="@+id/registration"
@@ -49,6 +52,9 @@
         <action
             android:id="@+id/action_registration_to_activitymainscreen"
             app:destination="@id/activitymainscreen" />
+        <action
+            android:id="@+id/action_registration_to_mainscreen"
+            app:destination="@id/mainscreen" />
     </fragment>
     <activity
         android:id="@+id/mainActivity"

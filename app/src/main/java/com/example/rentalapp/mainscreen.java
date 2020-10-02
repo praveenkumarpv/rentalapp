@@ -93,7 +93,7 @@ public class mainscreen extends Fragment {
         SharedPreferences settins = getActivity().getSharedPreferences(Preference,0);
         boolean haslogin = settins.getBoolean("haslogin",false);
         if (haslogin){
-            Toast.makeText(getActivity(), "Wellcome", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getActivity(), "Wellcome", Toast.LENGTH_SHORT).show();
 //            Navigation.findNavController(v).navigate(R.id.action_mainscreen_to_activitymainscreen);
 //            Navigation.findNavController(v).navigate(R.id.action_mainscreen_to_registration);
             Fragment navhost = getActivity().getSupportFragmentManager().findFragmentById(R.id.fragment);

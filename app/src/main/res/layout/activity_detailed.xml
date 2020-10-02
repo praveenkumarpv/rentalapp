@@ -183,7 +183,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="0.5"
-                android:text="KM"
+                android:text="KM LIMIT"
                 android:textAlignment="center"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="25dp"
@@ -216,7 +216,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="0.5"
-                android:text="Km/L"
+                android:text="MILEAGE"
                 android:textAlignment="center"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="25dp"
@@ -233,39 +233,7 @@
                 android:textStyle="bold"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_weight="0.5"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="5dp"
-            android:background="@drawable/tiles"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="0.5"
-                android:text="Fuel"
-                android:textAlignment="center"
-                android:textColor="@color/cardview_dark_background"
-                android:textSize="25dp"
-                tools:ignore="RtlCompat" />
-
-            <TextView
-                android:id="@+id/fuel"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:textAlignment="center"
-                android:textColor="#000"
-                android:textSize="25dp"
-                android:textStyle="bold"/>
-
-
-        </LinearLayout>
     </LinearLayout>
 
     <TextView

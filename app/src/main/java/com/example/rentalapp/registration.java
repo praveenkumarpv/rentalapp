@@ -138,7 +138,7 @@ public class registration extends Fragment {
                           if (task.isSuccessful()){
                               uid = mAuth.getInstance().getCurrentUser().getUid();
                               DocumentReference documentReference = db.collection("userres").document(uid);
-                              Toast.makeText(getActivity(), "Wellcome", Toast.LENGTH_SHORT).show();
+//                              Toast.makeText(getActivity(), "Wellcome", Toast.LENGTH_SHORT).show();
                               Map<String, Object> user = new HashMap<>();
 
                               user.put("name",name);
@@ -150,7 +150,7 @@ public class registration extends Fragment {
                                  @Override
                                  public void onSuccess(Void aVoid) {
                                      Navigation.findNavController(v).navigate(R.id.action_registration_to_blankFragment);
-                                     Navigation.findNavController(v).navigate(R.id.action_blankFragment_to_activitymainscreen);
+//                                     Navigation.findNavController(v).navigate(R.id.action_blankFragment_to_activitymainscreen);
                                      SharedPreferences settings = getActivity().getSharedPreferences(Preference,0);
                                      SharedPreferences.Editor editor= settings.edit();
                                      editor.putBoolean("haslogin",true);
